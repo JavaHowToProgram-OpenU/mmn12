@@ -41,10 +41,10 @@ public class GraphPlotDriver {
                If we encounter a NullPointerException, such as the user closed the input window, we end the plot.
              */
             catch (NullPointerException | IllegalArgumentException e) {
-                if (input == null) {
+                if (input == null || input.isEmpty()) {
                     break;
                 }
-                else if (! input.isEmpty()) {
+                else  {
                     JOptionPane.showMessageDialog(dialog, "Input error:\nMust enter an integer between 0-400!");
                     continue;
                 }
