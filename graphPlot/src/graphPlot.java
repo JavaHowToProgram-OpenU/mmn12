@@ -1,5 +1,6 @@
 import javax.swing.JPanel;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class graphPlot extends JPanel {
 
@@ -7,12 +8,12 @@ public class graphPlot extends JPanel {
      *                      Fields                        *
      *****************************************************/
     // The Points object containing the Points to connect
-    private Points points;
+    private ArrayList<Point> points;
 
     /******************************************************
      *                      Constructors                  *
      *****************************************************/
-    public graphPlot(Points points) {
+    public graphPlot(ArrayList<Point> points) {
         this.points = points;
     }
 
@@ -20,7 +21,10 @@ public class graphPlot extends JPanel {
      *                      Methods                       *
      *****************************************************/
 
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+
+
     }
 }
