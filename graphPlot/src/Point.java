@@ -1,5 +1,10 @@
 import static java.lang.Math.*;
 
+/** mmn12-1
+ * @author Gad Maor
+ * @version 1.0
+ * Represents a point in a 2D coordinate system
+ */
 public class Point {
     /******************************************************
      *                      Fields                        *
@@ -12,6 +17,11 @@ public class Point {
     /******************************************************
      *                      Constructors                  *
      *****************************************************/
+    /** Creates a new Point from given x and y coordinates
+     *
+     * @param x The x coordinate of this Point
+     * @param y The y coordinate of this Point
+     */
     public Point (int x, int y) {
         this.x = x;
         this.y = y;
@@ -29,25 +39,23 @@ public class Point {
         return y;
     }
 
-    /** Calculates and returns the length of the line created by the 2 given Points
+    /** Returns the distance between this Point and p
      *
-     * @param p1 The first point
-     * @param p2 The second Point
-     * @return - The length of the line between the 2 Points
+     * @param p The point to calculate the distance to
+     * @return - The distance between this Point and p
      */
-    public double getLength(Point p1, Point p2) {
-        return sqrt(pow((double)p2.getY() - p1.getX(), 2) + pow((double)p2.getY() - p1.getY(), 2));
+    public double getDistance(Point p) {
+        return sqrt(pow(this.getX() - p.getX(), 2) + pow(this.getY() - p.getY(), 2));
     }
 
-    /** Calculates and returns the middle Point of a line between the 2 given Points
+    /** Returns the middle Point between this point and p
      *
-     * @param p1 The first point
-     * @param p2 The second point
-     * @return - The Point in the middle of the line between the 2 given Points
+     * @param p The point to use to find the midpoint between this Point and it
+     * @return - The midpoint between this Point and p
      */
-    public Point getMiddlePoint(Point p1, Point p2) {
-        int xMiddle = p1.getX() + p2.getX() / 2;
-        int yMiddle = p1.getY() + p2.getY() / 2;
+    public Point getMiddlePoint(Point p) {
+        int xMiddle = (this.getX() + p.getX()) / 2;
+        int yMiddle = (this.getY() + p.getY()) / 2;
         return new Point(xMiddle, yMiddle);
     }
 }
