@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Plots a polygon from a given ArrayList of Points on a JPanel object.
  *  Adds the length of each line line in the line's middle Point. *
  */
-public class graphPlot extends JPanel {
+public class GraphPlot extends JPanel {
 
     /******************************************************
      *                      Fields                        *
@@ -19,11 +19,11 @@ public class graphPlot extends JPanel {
     /******************************************************
      *                      Constructors                  *
      *****************************************************/
-    /** Creates a new graphPlot using an ArrayList of Points
+    /** Creates a new GraphPlot using an ArrayList of Points
      *
      * @param points
      */
-    public graphPlot(ArrayList<Point> points) {
+    public GraphPlot(ArrayList<Point> points) {
         this.points = points;
     }
 

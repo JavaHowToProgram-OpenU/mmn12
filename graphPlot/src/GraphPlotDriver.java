@@ -4,15 +4,15 @@ import java.util.ArrayList;
 /** mmn12-1
  * @author Gad Maor
  * @version 1.0
- * A driver class for the graphPlot program. Initiates an ArrayList of points and a JFrame object,
- * receives the points as input from the user and plots them on a JPanel
+ * A driver class for the GraphPlot program. Initiates an ArrayList of points and a JFrame object,
+ * receives the points as input from the user and draws the lines between them on the panel
  */
-public class graphPlotDriver {
+public class GraphPlotDriver {
     public static void main(String[] args) {
         // ArrayList to hold the plot Points
         ArrayList<Point> points = new ArrayList<>();
-        // graphPlot object to plot the lines between the given Points
-        graphPlot plot = new graphPlot(points);
+        // GraphPlot object to plot the lines between the given Points
+        GraphPlot plot = new GraphPlot(points);
         JFrame app = new JFrame();
         app.setAlwaysOnTop(true);
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,28 +36,49 @@ public class graphPlotDriver {
                 input = getInput(dialog, "y");
                 y = getCoordinate(input);
             }
-            catch (IllegalArgumentException e) {
-                if (! input.isEmpty()) {
-                    JOptionPane.showMessageDialog(dialog, "Input error:\nMust enter an integer between 0-400!");
+            /* Catches NumberFormatException exception if user inputs anything byt an integer and
+               an IllegalArgumentException exception if the user inputs an out of range coordinate.
+               If we encounter a NullPointerException, such as the user closed the input window, we end the plot.
+             */
+            catch (NullPointerException | IllegalArgumentException e) {
+                if (input == null) {
+                    break;
                 }
-                continue;
+                else if (! input.isEmpty()) {
+                    JOptionPane.showMessageDialog(dialog, "Input error:\nMust enter an integer between 0-400!");
+                    continue;
+                }
             }
             points.add(new Point(x ,y));
             ++pointCounter;
             // IF we don't have at least 2 points, there's nothing to plot
             if (pointCounter > 1) {
                 JOptionPane.showMessageDialog(dialog, "Will now plot the line!");
+                // Draw the lines between all points received until now
                 plot.repaint();
             }
         } while (! input.isEmpty());
         JOptionPane.showMessageDialog(dialog, "Plotting completed!\nClose the graph window to end program.");
         dialog.dispose();
     }
+
+    /** Gets the input from the user for the Point's coordinates
+     *
+     * @param dialog The dialog object in which to print the input request message
+     * @param coordinateComponnet the coordinateComponnet(x or y) to request input for
+     * @return - The user's input
+     */
     private static String getInput(JDialog dialog, String coordinateComponnet) {
         String message = "Enter " + coordinateComponnet + " coordinate for the Point:(in the range 0-400)";
         String result =  JOptionPane.showInputDialog(dialog, message);
         return result;
     }
+
+    /** Gets the coordinate in int form from the user's input and validate it's in the range 0-400
+     *
+     * @param input The input the user typed in
+     * @return - The coordinate
+     */
     private static int getCoordinate(String input) {
         int result = Integer.parseInt(input);
         if (result < 0 || result > 400) {
@@ -65,9 +86,14 @@ public class graphPlotDriver {
         }
         return result;
     }
+
+    /** Prints a welcome message and the instructions for plotting a new polygon.
+     *
+     * @param dialog The dialog object in which to print the welcome message
+     */
     public static void printWelcomeMessage(JDialog dialog) {
         String message = "Welcome to Polygon plotter!\n" +
-                         "This program plots lines between 2 given points you enter.\n" +
+                         "This program plots lines between each 2 points you enter.\n" +
                          "Accepted input is an integer in the range 0-400.\n"  +
                          "Enter an empty string to mark end of input.\n" +
                          "Happy plotting!\n";
