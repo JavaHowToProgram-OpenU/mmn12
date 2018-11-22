@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../BankAccount/BankAccount.iml" filepath="$PROJECT_DIR$/../BankAccount/BankAccount.iml" />
       <module fileurl="file://$PROJECT_DIR$/graphPlot/graphPlot.iml" filepath="$PROJECT_DIR$/graphPlot/graphPlot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../graphPlot/graphPlot1.iml" filepath="$PROJECT_DIR$/../graphPlot/graphPlot1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../graphPlot/graphPlot2.iml" filepath="$PROJECT_DIR$/../graphPlot/graphPlot2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mmn12.iml" filepath="$PROJECT_DIR$/.idea/mmn12.iml" />
     </modules>
   </component>
