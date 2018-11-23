@@ -93,7 +93,7 @@ public abstract class BankAccount {
      *  Must be implemented by all extending subclasses.
      *
      */
-    public abstract monthlyManagement(){};
+    public abstract void monthlyManagement() throws IllegalBalanceException;
 
     /** Returns a String representation of this BankAccount object
      *

@@ -8,9 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c24a2e6f-a635-4519-813c-75dc8e841e36" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../BankAccount/src/CheckingAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BankAccount/src/ServiceChargeChecking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BankAccount/src/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BankAccount/src/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BankAccount/src/IllegalBalanceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BankAccount/src/IllegalBalanceException.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,16 +38,25 @@
         <entry file="file://$PROJECT_DIR$/../BankAccount/src/BankAccount.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
-              <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
+              <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckingAccount.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CheckingAccount.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../BankAccount/src/CheckingAccount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="90">
+              <caret line="6" column="72" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceChargeChecking.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../BankAccount/src/ServiceChargeChecking.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -54,8 +64,8 @@
       <file leaf-file-name="IllegalBalanceException.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../BankAccount/src/IllegalBalanceException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+            <state>
+              <caret column="63" selection-start-column="63" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -103,9 +113,10 @@
         <option value="$PROJECT_DIR$/graphPlot/src/Point.java" />
         <option value="$PROJECT_DIR$/graphPlot/src/graphPlotDriver.java" />
         <option value="$PROJECT_DIR$/graphPlot/src/GraphPlotDriver.java" />
+        <option value="$PROJECT_DIR$/../BankAccount/src/CheckingAccount.java" />
         <option value="$PROJECT_DIR$/../BankAccount/src/IllegalBalanceException.java" />
         <option value="$PROJECT_DIR$/../BankAccount/src/BankAccount.java" />
-        <option value="$PROJECT_DIR$/../BankAccount/src/CheckingAccount.java" />
+        <option value="$PROJECT_DIR$/../BankAccount/src/ServiceChargeChecking.java" />
       </list>
     </option>
   </component>
@@ -287,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542929118124</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Finished CheckingAccount class">
+      <created>1542933414786</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1542933414786</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -307,7 +325,7 @@
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24986567" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24986567" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="1" />
@@ -337,7 +355,8 @@
     <MESSAGE value="Q1 done" />
     <MESSAGE value="Q1 really done" />
     <MESSAGE value="Q2 start - BankAccount and IllegalBalanceException classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Q2 start - BankAccount and IllegalBalanceException classes" />
+    <MESSAGE value="Finished CheckingAccount class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished CheckingAccount class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -566,22 +585,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../BankAccount/src/IllegalBalanceException.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="63" selection-start-column="63" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../BankAccount/src/CheckingAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <caret line="6" column="72" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../BankAccount/src/BankAccount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
+          <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../BankAccount/src/CheckingAccount.java">
+    <entry file="file://$PROJECT_DIR$/../BankAccount/src/ServiceChargeChecking.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        <state relative-caret-position="540">
+          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
         </state>
       </provider>
     </entry>
