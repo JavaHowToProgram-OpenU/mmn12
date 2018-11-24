@@ -16,11 +16,11 @@ public class InterestChecking extends NoServiceChargeChecking {
     /** Creates a new InterestChecking account with the annual interest rate set to the DEFAULT_INTEREST_RATE.
      *  Uses the NoServiceChargeChecking constructor for setting the account details.
      *
-     * @param accountNumber The NoServiceChargeChecking's accountNumber
-     * @param accountOwnerName The NoServiceChargeChecking's accountownerName
-     * @param accountOwnerId The NoServiceChargeChecking's accountOwnerId
-     * @param balance The NoServiceChargeChecking's balance
-     * @param minimumBalance The minimum allowed balance for this NoServiceChargeChecking NoServiceChargeChecking
+     * @param accountNumber The InterestChecking's accountNumber
+     * @param accountOwnerName The InterestChecking's accountownerName
+     * @param accountOwnerId The InterestChecking's accountOwnerId
+     * @param balance The InterestChecking's balance
+     * @param minimumBalance The minimum allowed balance for this InterestChecking NoServiceChargeChecking
      */
     public InterestChecking(String accountNumber, String accountOwnerName, String accountOwnerId,
                             double balance, double minimumBalance) {
@@ -31,11 +31,11 @@ public class InterestChecking extends NoServiceChargeChecking {
     /** Creates a new InterestChecking account.
      *  Uses the NoServiceChargeChecking constructor for setting the account details.
      *
-     * @param accountNumber The NoServiceChargeChecking's accountNumber
-     * @param accountOwnerName The NoServiceChargeChecking's accountownerName
-     * @param accountOwnerId The NoServiceChargeChecking's accountOwnerId
-     * @param balance The NoServiceChargeChecking's balance
-     * @param minimumBalance The minimum allowed balance for this NoServiceChargeChecking NoServiceChargeChecking
+     * @param accountNumber The InterestChecking's accountNumber
+     * @param accountOwnerName The InterestChecking's accountownerName
+     * @param accountOwnerId The InterestChecking's accountOwnerId
+     * @param balance The InterestChecking's balance
+     * @param minimumBalance The minimum allowed balance for this InterestChecking NoServiceChargeChecking
      * @param interestRate The annual interest rate for this InterestChecking NoServiceChargeChecking account
      */
     public InterestChecking(String accountNumber, String accountOwnerName, String accountOwnerId,
@@ -44,6 +44,9 @@ public class InterestChecking extends NoServiceChargeChecking {
         this.interestRate = interestRate;
     }
 
+    /******************************************************
+     *                      Methods                       *
+     *****************************************************/
     public int getInterestRate() {
         return interestRate;
     }
@@ -70,6 +73,10 @@ public class InterestChecking extends NoServiceChargeChecking {
         this.setBalance(this.getBalance() + this.getMonthlyInterest());
     }
 
+    /** Returns a String representation of this InterestChecking NoServiceChargeChecking account
+     *
+     * @return - A String representation of this InterestChecking NoServiceChargeChecking account
+     */
     @Override
     public String toString() {
         return String.format("%s %s%n%s: %d%%%n",
