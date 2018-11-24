@@ -101,7 +101,7 @@ public abstract class BankAccount {
      */
     @Override
     public String toString() {
-        return String.format("number: %s%nAccount Owner: %s%nOwner ID: %s%nbalance: $%,.2f",
+        return String.format("Bank Account number: %s%nAccount Owner: %s%nOwner ID: %s%nbalance: $%,.2f%n",
                         getAccountNumber(), getAccountOwnerName(),
                         getAccountOwnerId(), getBalance());
     }
@@ -113,15 +113,15 @@ public abstract class BankAccount {
      */
     @Override
     public boolean equals(Object o) {
-        if (o == null || !(o instanceof BankAccount)) {
+        if (!(o instanceof BankAccount)) {
             return false;
         }
         else {
             BankAccount ba = (BankAccount)o;
             return ba.getBalance() == this.getBalance() &&
-                   ba.getAccountNumber() == this.getAccountNumber() &&
-                   ba.getAccountOwnerId() == this.getAccountOwnerId() &&
-                   ba.getAccountOwnerName() == this.getAccountOwnerName();
+                   ba.getAccountNumber().equals(this.getAccountNumber())  &&
+                   ba.getAccountOwnerId().equals(this.getAccountOwnerId()) &&
+                   ba.getAccountOwnerName().equals(this.getAccountOwnerName());
         }
     }
 }

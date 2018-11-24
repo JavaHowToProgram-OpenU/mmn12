@@ -36,4 +36,25 @@ public class ServiceChargeChecking extends CheckingAccount {
     public void monthlyManagement() throws IllegalBalanceException {
         this.setBalance(this.getBalance() - this.getMonthlyComission());
     }
+
+    @Override
+    public String toString(){
+        return String.format("%s %s%n%s: $%,.2f%n",
+                              "Checking Account", super.toString(), "monthly commission", this.getMonthlyComission());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof BankAccount)) {
+            return false;
+        }
+        else {
+            BankAccount ba = (BankAccount)o;
+            if (!ba.equals(o)) {
+                return false;
+            }
+            ServiceChargeChecking scc = (ServiceChargeChecking)o;
+            return  scc.getMonthlyComission() == this.getMonthlyComission();
+        }
+    }
 }
