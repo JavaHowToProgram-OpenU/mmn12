@@ -10,6 +10,7 @@ public class SavingsAccount extends BankAccount {
     private static final int DEFAULT_INTEREST_RATE = 5;
     // Annual interest rate in percentage
     private int interestRate;
+
     /******************************************************
      *                      Constructors                  *
      *****************************************************/
@@ -90,7 +91,12 @@ public class SavingsAccount extends BankAccount {
         if (!(o instanceof SavingsAccount)) {
             return false;
         }
-        SavingsAccount sa = (SavingsAccount) o;
-        return  sa.getInterestRate() == this.getInterestRate();
+        else {
+            if (!super.equals(o)) {
+                return false;
+            }
+            SavingsAccount sa = (SavingsAccount) o;
+            return sa.getInterestRate() == this.getInterestRate();
+        }
     }
 }

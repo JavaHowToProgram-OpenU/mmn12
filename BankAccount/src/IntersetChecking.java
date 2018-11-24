@@ -95,7 +95,12 @@ public class InterestChecking extends NoServiceChargeChecking {
         if (!(o instanceof InterestChecking)) {
             return false;
         }
-        InterestChecking ic = (InterestChecking)o;
-        return  ic.getInterestRate() == this.getInterestRate();
+        else {
+            if (!super.equals(o)) {
+                return false;
+            }
+            InterestChecking ic = (InterestChecking) o;
+            return ic.getInterestRate() == this.getInterestRate();
+        }
     }
 }

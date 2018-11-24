@@ -61,7 +61,7 @@ public class NoServiceChargeChecking extends CheckingAccount{
 
     /** Withdraws given amount from this NoServiceChargeChecking's balance
      *
-     * @param amount The amount to withdraw from this BankAccount
+     * @param amount The amount to withdraw from this NoServiceChargeChecking
      * @throws IllegalBalanceException if there's not enough money in this NoServiceChargeChecking to withdraw
      */
     @Override
@@ -106,7 +106,12 @@ public class NoServiceChargeChecking extends CheckingAccount{
         if (!(o instanceof NoServiceChargeChecking)) {
             return false;
         }
-        NoServiceChargeChecking nscc = (NoServiceChargeChecking)o;
-        return  nscc.getMinimumBalance() == this.getMinimumBalance();
+        else {
+            if (!super.equals(o)) {
+                return false;
+            }
+            NoServiceChargeChecking nscc = (NoServiceChargeChecking) o;
+            return nscc.getMinimumBalance() == this.getMinimumBalance();
+        }
     }
 }
