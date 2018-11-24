@@ -68,7 +68,7 @@ public abstract class BankAccount {
      *
      * @param amount The amount to deposit to this BankAccount's balance
      */
-    public void deposit(double amount) {
+    public void deposit(double amount) throws IllegalBalanceException {
         if (amount >= 0.0){
             this.setBalance(this.getBalance() + amount);
         }
@@ -101,7 +101,7 @@ public abstract class BankAccount {
      */
     @Override
     public String toString() {
-        return String.format("Bank Account number: %s%nAccount Owner: %s%nOwner ID: %s%nbalance: $%,.2f%n",
+        return String.format("Bank Account number: %s%nAccount Owner: %s%nOwner ID: %s%nbalance: $%,.2f",
                         getAccountNumber(), getAccountOwnerName(),
                         getAccountOwnerId(), getBalance());
     }

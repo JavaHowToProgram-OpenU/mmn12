@@ -1,9 +1,10 @@
+
 public abstract class CheckingAccount extends BankAccount {
 
     /******************************************************
      *                      Constructors                  *
      *****************************************************/
-    public CheckingAccount(String accountNumber, String accountOwnerName, String accountOwnerId, double balance) {
+    public CheckingAccount(String accountNumber, String accountOwnerName, String accountOwnerId, double balance) throws IllegalBalanceException {
         super(accountNumber, accountOwnerName, accountOwnerId, balance);
     }
 
@@ -18,7 +19,7 @@ public abstract class CheckingAccount extends BankAccount {
      */
     public void writeCheck(double checkAmount) throws IllegalBalanceException{
         if (checkAmount > this.getBalance()) {
-            throw new IllegalBalanceException("Check bounced. Insufficient funds in account!")
+            throw new IllegalBalanceException("Check bounced. Insufficient funds in account!");
         }
         else {
             this.setBalance(this.getBalance() - checkAmount);

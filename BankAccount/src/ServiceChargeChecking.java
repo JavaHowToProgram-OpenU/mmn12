@@ -11,12 +11,12 @@ public class ServiceChargeChecking extends CheckingAccount {
      *                      Constructors                  *
      *****************************************************/
     public ServiceChargeChecking(String accountNumber, String accountOwnerName, String accountOwnerId,
-                                 double balance) {
+                                 double balance) throws IllegalBalanceException {
         super(accountNumber, accountOwnerName, accountOwnerId, balance);
         this.monthlyComission = DEFAULT_MONTHLY_COMMISION;
     }
     public ServiceChargeChecking(String accountNumber, String accountOwnerName, String accountOwnerId,
-                                 double balance, double monthlyComission) {
+                                 double balance, double monthlyComission) throws IllegalBalanceException {
         super(accountNumber, accountOwnerName, accountOwnerId, balance);
         this.monthlyComission = monthlyComission;
     }
@@ -39,7 +39,7 @@ public class ServiceChargeChecking extends CheckingAccount {
 
     @Override
     public String toString(){
-        return String.format("%s %s%n%s: $%,.2f%n",
+        return String.format("%s %s%n%s: $%,.2f",
                               "Checking Account", super.toString(), "monthly commission", this.getMonthlyComission());
     }
 
