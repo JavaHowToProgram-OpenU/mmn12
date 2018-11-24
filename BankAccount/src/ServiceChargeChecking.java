@@ -68,7 +68,7 @@ public class ServiceChargeChecking extends CheckingAccount {
     @Override
     public String toString(){
         return String.format("%s %s%n%s: $%,.2f%n",
-                              "Checking Account", super.toString(), "monthly commission", this.getMonthlyComission());
+                              "service charge checking account", super.toString(), "monthly commission: ", this.getMonthlyComission());
     }
 
     /** Compares 2 ServiceChargeChecking CheckingAccounts by their respective properties to check if they're equal
@@ -78,7 +78,7 @@ public class ServiceChargeChecking extends CheckingAccount {
      */
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof CheckingAccount)) {
+        if (!(o instanceof ServiceChargeChecking)) {
             return false;
         }
         else {

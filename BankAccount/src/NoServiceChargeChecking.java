@@ -69,13 +69,22 @@ public class NoServiceChargeChecking extends CheckingAccount{
         double newBalance = this.getBalance() - amount;
         // Can't withdraw more than the minimum allowed balance
         if (newBalance < this.getMinimumBalance()) {
-            throw new IllegalBalanceException("Insuffucuent funds! This account has a minimum allowed balance!")
+            throw new IllegalBalanceException("Insuffucuent funds! This account has a minimum allowed balance!");
         }
         else {
             this.setBalance(newBalance);
         }
     }
 
+    /**  Writes a check(deducts amount from this account in the given amount)
+     *
+     * @param checkAmount The amount which to deduct from this NoServiceChargeChecking(the amount on the check)
+     * @throws IllegalBalanceException if the deduction leads to a balance lower than the allowed minimum balance
+     */
+    @Override
+    public void writeCheck (double checkAmount) throws IllegalBalanceException{
+        this.withdraw(checkAmount);
+    }
     /** Returns a String representation of this NoServiceChargeChecking CheckingAccount
      *
      * @return -  A String representation of this NoServiceChargeChecking CheckingAccount
@@ -83,7 +92,7 @@ public class NoServiceChargeChecking extends CheckingAccount{
     @Override
     public String toString() {
         return String.format("%s %s%n%s: $%,.2f%n",
-                "No Service Checking Account", super.toString(), "minimum balance", this.getMinimumBalance());
+                "no service charge checking account", super.toString(), "minimum balance: ", this.getMinimumBalance());
     }
 
     /** Compares 2 NoServiceChargeChecking CheckingAccounts by their respective properties to check if they're equal
@@ -91,9 +100,10 @@ public class NoServiceChargeChecking extends CheckingAccount{
      * @param o The NoServiceChargeChecking CheckingAccount to compare this NoServiceChargeChecking CheckingAccount to
      * @return - true if the NoServiceChargeChecking CheckingAccounts are equal and false otherwise
      */
+
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof CheckingAccount)) {
+        if (!(o instanceof NoServiceChargeChecking)) {
             return false;
         }
         NoServiceChargeChecking nscc = (NoServiceChargeChecking)o;

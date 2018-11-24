@@ -98,7 +98,7 @@ public abstract class BankAccount {
      */
     @Override
     public String toString() {
-        return String.format("Bank Account number: %s%nAccount Owner: %s%nOwner ID: %s%nbalance: $%,.2f",
+        return String.format("number: %s%nAccount Owner: %s%nOwner ID: %s%nbalance: $%,.2f",
                         getAccountNumber(), getAccountOwnerName(),
                         getAccountOwnerId(), getBalance());
     }
