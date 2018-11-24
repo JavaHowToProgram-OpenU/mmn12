@@ -71,7 +71,7 @@ public abstract class BankAccount {
         }
     }
 
-    /** Withdraws given amount from this BankAccount's balance
+    /** Withdraws given amount from this BankAccount's balance and returns the new balance
      *
      * @param amount The amount to withdraw from this BankAccount
      * @throws IllegalBalanceException if there's not enough money in this BankAccount to withdraw
@@ -79,7 +79,7 @@ public abstract class BankAccount {
     public void withdraw(double amount) throws IllegalBalanceException {
         // Not enough money in balance - throw IllegalBalanceException
         if (amount > this.getBalance()){
-            throw new IllegalBalanceException("Insufficient funds for withdrawal in account!");
+            throw new IllegalBalanceException("Insufficient funds for withdrawal in this account!");
         }
         else if (amount >= 0.0) {
             this.setBalance(this.getBalance() - amount);

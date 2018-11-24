@@ -71,7 +71,7 @@ public class ServiceChargeChecking extends CheckingAccount {
                               "Checking Account", super.toString(), "monthly commission", this.getMonthlyComission());
     }
 
-    /** Compares 2 ServiceChargeChecking BankAccounts by their respective properties to check if they're equal
+    /** Compares 2 ServiceChargeChecking CheckingAccounts by their respective properties to check if they're equal
      *
      * @param o The ServiceChargeChecking CheckingAccount to compare this ServiceChargeChecking CheckingAccount to
      * @return - true if the ServiceChargeChecking BankAccounts are equal and false otherwise
