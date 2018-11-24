@@ -4,7 +4,7 @@ public abstract class CheckingAccount extends BankAccount {
     /******************************************************
      *                      Constructors                  *
      *****************************************************/
-    public CheckingAccount(String accountNumber, String accountOwnerName, String accountOwnerId, double balance) throws IllegalBalanceException {
+    public CheckingAccount(String accountNumber, String accountOwnerName, String accountOwnerId, double balance) {
         super(accountNumber, accountOwnerName, accountOwnerId, balance);
     }
 

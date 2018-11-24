@@ -20,15 +20,13 @@ public abstract class BankAccount {
      * @param accountOwnerName This BankAccount's accountownerName
      * @param accountOwnerId This BankAccount's accountOwnerId
      * @param balance This BankAccount's balance
-     * @throws IllegalBalanceException if balance < 0.0
      */
-    public BankAccount(String accountNumber, String accountOwnerName, String accountOwnerId, double balance)
-            throws  IllegalBalanceException {
+    public BankAccount(String accountNumber, String accountOwnerName, String accountOwnerId, double balance) {
         this.accountNumber = accountNumber;
         this.accountOwnerName = accountOwnerName;
         this.accountOwnerId = accountOwnerId;
         if (balance < 0.0) {
-            throw new IllegalBalanceException("Balance must be >= 0.0");
+            throw new IllegalArgumentException("Balance must be >= 0.0");
         }
         this.balance = balance;
     }
@@ -55,11 +53,10 @@ public abstract class BankAccount {
     /** Setter method for balance
      *
      * @param balance The balance to which to set this BankAccount's balance
-     * @throws IllegalBalanceException if balance < 0.0
      */
-    public void setBalance(double balance) throws IllegalBalanceException {
+    public void setBalance(double balance) {
         if (balance < 0.0) {
-            throw new IllegalBalanceException("Balance must be >= 0.0");
+            throw new IllegalArgumentException("Balance must be >= 0.0");
         }
         this.balance = balance;
     }
@@ -68,7 +65,7 @@ public abstract class BankAccount {
      *
      * @param amount The amount to deposit to this BankAccount's balance
      */
-    public void deposit(double amount) throws IllegalBalanceException {
+    public void deposit(double amount) {
         if (amount >= 0.0){
             this.setBalance(this.getBalance() + amount);
         }
@@ -82,7 +79,7 @@ public abstract class BankAccount {
     public void withdraw(double amount) throws IllegalBalanceException {
         // Not enough money in balance - throw IllegalBalanceException
         if (amount > this.getBalance()){
-            throw new IllegalBalanceException("Insufficient funds for withdrawl in account!");
+            throw new IllegalBalanceException("Insufficient funds for withdrawal in account!");
         }
         else if (amount >= 0.0) {
             this.setBalance(this.getBalance() - amount);
@@ -106,10 +103,10 @@ public abstract class BankAccount {
                         getAccountOwnerId(), getBalance());
     }
 
-    /** Compares 2 BankAccounts by their respective properties
+    /** Compares 2 BankAccounts by their respective properties to check if they're equal
      *
      * @param o The BankAccount to compare this BankAccount to
-     * @return - true if the BankAccounts are equal and false otherwise.
+     * @return - true if the BankAccounts are equal and false otherwise
      */
     @Override
     public boolean equals(Object o) {
