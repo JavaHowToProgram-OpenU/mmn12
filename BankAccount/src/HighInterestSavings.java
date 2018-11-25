@@ -1,5 +1,7 @@
 /** Represents a SavingsAccount with an interest and a minimum allowed balance
- *
+ *  mmn12-2
+ *  * @author Gad Maor
+ *  * @version 1.0
  */
 public class HighInterestSavings extends SavingsAccount {
 
@@ -69,7 +71,7 @@ public class HighInterestSavings extends SavingsAccount {
         double newBalance = this.getBalance() - amount;
         // Can't withdraw more than the minimum allowed balance
         if (newBalance < this.getMinimumBalance()) {
-            throw new IllegalBalanceException("Insuffucuent funds! This account has a minimum allowed balance!");
+            throw new IllegalBalanceException("Insufficent funds! This account has a minimum allowed balance!");
         }
         else {
             this.setBalance(newBalance);
@@ -81,7 +83,7 @@ public class HighInterestSavings extends SavingsAccount {
      */
     @Override
     public String toString() {
-        return String.format("%s %s%n%s: $%,.2f%n",
+        return String.format("%s %s%s: $%,.2f%n",
                 "high interest savings account", super.toString(), "minimum balance: ", this.getMinimumBalance());
     }
 

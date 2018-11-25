@@ -1,5 +1,7 @@
 /** Represents a CheckingAccount which charges a monthly commission for managing the account.
- *
+ * mmn12-2
+ * @author Gad Maor
+ * @version 1.0
  */
 public class ServiceChargeChecking extends CheckingAccount {
 

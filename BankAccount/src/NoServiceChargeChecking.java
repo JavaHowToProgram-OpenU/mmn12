@@ -1,5 +1,7 @@
 /** Represents a CheckingAccount with no monthly commission and a minimum allowed balance.
- *
+ *  mmn12-2
+ *  * @author Gad Maor
+ *  * @version 1.0
  */
 public class NoServiceChargeChecking extends CheckingAccount{
 
@@ -69,7 +71,7 @@ public class NoServiceChargeChecking extends CheckingAccount{
         double newBalance = this.getBalance() - amount;
         // Can't withdraw more than the minimum allowed balance
         if (newBalance < this.getMinimumBalance()) {
-            throw new IllegalBalanceException("Insuffucuent funds! This account has a minimum allowed balance!");
+            throw new IllegalBalanceException("Insufficent funds! This account has a minimum allowed balance!");
         }
         else {
             this.setBalance(newBalance);

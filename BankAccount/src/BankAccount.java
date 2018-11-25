@@ -1,5 +1,7 @@
 /** Represents a BankAccount, holding a specific balance.
- *
+ *  mmn12-2
+ *  * @author Gad Maor
+ *  * @version 1.0
  */
 public abstract class BankAccount {
 

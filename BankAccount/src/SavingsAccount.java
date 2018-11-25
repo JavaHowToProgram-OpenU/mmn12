@@ -1,5 +1,7 @@
 /** Represents a BankAccount with an interest
- *
+ *  mmn12-2
+ *  * @author Gad Maor
+ *  * @version 1.0
  */
 public class SavingsAccount extends BankAccount {
 
@@ -57,7 +59,7 @@ public class SavingsAccount extends BankAccount {
      * @return - The monthly interest for this SavingsAccount BankAccount
      */
     public double getMonthlyInterest() {
-        double decimalMonthlyRate = (this.getInterestRate() / 100) / 12;
+        double decimalMonthlyRate = ((double) this.getInterestRate() / 100) / 12;
         return decimalMonthlyRate * this.getBalance();
     }
     /** Runs the monthly management action to add the monthly interest
@@ -76,7 +78,7 @@ public class SavingsAccount extends BankAccount {
     @Override
     public String toString() {
         return String.format("%s %s%n%s: %d%%%n",
-                "savings account", super.toString(), "interest rate: ", this.getInterestRate());
+                "savings account", super.toString(), "annual interest rate: ", this.getInterestRate());
     }
 
     /** Compares 2 InterestChecking NoServiceChargeChecking accounts

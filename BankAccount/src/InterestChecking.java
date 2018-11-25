@@ -1,5 +1,7 @@
 /** Represents a NoServiceChargeChecking with an interest and no monthly commission
- *
+ *  mmn12-2
+ *  * @author Gad Maor
+ *  * @version 1.0
  */
 public class InterestChecking extends NoServiceChargeChecking {
 
@@ -60,7 +62,7 @@ public class InterestChecking extends NoServiceChargeChecking {
      * @return - The monthly interest for this InterestChecking NoServiceChargeChecking account
      */
     public double getMonthlyInterest() {
-        double decimalMonthlyRate = (this.getInterestRate() / 100) / 12;
+        double decimalMonthlyRate = ((double) this.getInterestRate() / 100) / 12;
         return decimalMonthlyRate * this.getBalance();
     }
 
@@ -79,8 +81,8 @@ public class InterestChecking extends NoServiceChargeChecking {
      */
     @Override
     public String toString() {
-        return String.format("%s %s%n%s: %d%%%n",
-                "interest checking account", super.toString(), "interest rate: ", this.getInterestRate());
+        return String.format("%s %s%s: %d%%%n",
+                "interest checking", super.toString(), "annual interest rate: ", this.getInterestRate());
     }
 
     /** Compares 2 InterestChecking NoServiceChargeChecking accounts
